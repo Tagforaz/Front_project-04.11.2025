@@ -1,63 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <script src="assets/js/main.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
+    <script defer src="assets/js/main.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script defer src="../path/to/flowbite/dist/flowbite.min.js"></script>
-    <link rel="stylesheet" href="assets/css/style.css">
-    
-</head>
-<body>
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
 
-    <!-- <header>
-        <div class="main-logo"><img src="assets/images/6618e6d729fbc80018bdcbb1.png" alt="main-logo"> </div>
-        <nav>
-            <ul>
-                <img src="" alt="">
-                <li><a href="">Explore</a></li>
-                
-                 <li><a href="">Live</a></li>
-                  <li><a href="">Search</a></li>
-            </ul>
-        </nav></header> -->
+ <header class="nav-bar">
+    <div class="main-logo">
+      <img src="assets/images/6618e6d729fbc80018bdcbb1.png" alt="Exxen Logo" />
+    </div>
+    <nav class="nav-menu">
+      <ul>
+        <li>
+          <a href="#" ><i class="fa-regular fa-house fa-1x"></i>Explore</a>
+        </li>
+        <li>
+          <a href="#"><i class="fa-solid fa-tv"></i>Live</a>
+        </li>
+        <li>
+          <a href="#"><i class="fa-solid fa-magnifying-glass"></i>Search</a>
+        </li>
+      </ul>
+    </nav> 
+    <div class="right-side">
+    <div class="lang" id="langToggle" role="button" aria-expanded="false" aria-haspopup="listbox" tabindex="0">
+  <svg class="lang-globe" width="28" height="28" viewBox="0 0 24 24" aria-hidden="true">
+    <path fill="currentColor" d="M12 2a10 10 0 1 0 10 10A10.011 10.011 0 0 0 12 2Zm7.93 9h-3.12a15.6 15.6 0 0 0-1.13-5 8.013 8.013 0 0 1 4.25 5ZM12 4a13.7 13.7 0 0 1 1.72 7H10.28A13.7 13.7 0 0 1 12 4ZM8.25 6a15.6 15.6 0 0 0-1.13 5H4a8.013 8.013 0 0 1 4.25-5ZM4 13h3.12a15.6 15.6 0 0 0 1.13 5A8.013 8.013 0 0 1 4 13Zm8 7a13.7 13.7 0 0 1-1.72-7h3.44A13.7 13.7 0 0 1 12 20Zm3.75-2a15.6 15.6 0 0 0 1.13-5H20a8.013 8.013 0 0 1-4.25 5Z"/>
+  </svg>
+  <span class="lang-code">EN</span>
+  <svg class="lang-caret" width="12" height="12" viewBox="0 0 24 24" aria-hidden="true">
+    <path fill="currentColor" d="M7 10l5 5 5-5z"/>
+  </svg>
+</div>
+<div class="lang-dropdown" id="langMenu" role="listbox" aria-labelledby="langToggle">
+  <button class="lang-option is-active" data-value="EN" role="option" aria-selected="true">
+    <svg class="flag" viewBox="0 0 3900 3900" aria-hidden="true"><path fill="#b22234" d="M0 0h7410v3900H0z"/><path d="M0 450h7410m0 600H0m0 600h7410m0 600H0m0 600h7410m0 600H0" stroke="#fff" stroke-width="300"/><path fill="#3c3b6e" d="M0 0h2964v2100H0z"/></svg>
+    English (US)
+  </button>
+  <button class="lang-option" data-value="TR" role="option">
+    <svg class="flag" viewBox="0 0 512 512" aria-hidden="true">
+      <path fill="#e30a17" d="M0 0h512v512H0z"/><path fill="#fff" d="M225 256a88 88 0 1 1 0-176 88 88 0 0 0 0 176zm120-59-39 13 25 31-32-20-10 40-10-40-32 20 25-31-39-13 39-13-25-31 32 20 10-40 10 40 32-20-25 31z"/>
+    </svg>
+    Turkish
+  </button>
+</div>
+      <button class="login-btn">Log In</button>    
+    </div>
+    <div class="register">
+        <input class="fullname" type="text"  placeholder="Name and Surname">
+        <input class="email" type="text" placeholder="Email">
+        <button class="register-btn">Register</button>
+    </div>
+  </header>
+  <main>
+   <div class="categories">
+  <h2>Categories</h2>
 
+  <div class="cat-grid">
+    <a class="cat-card" href="#">
+      <img src="assets/images/664b4ddb23eec600172f52b2.png" alt="">
+      <span>Competitions</span>
+    </a>
 
-<nav class="bg-white border-gray-200 dark:bg-gray-900">
-  <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-  <a href="https://flowbite.com/" class="flex items-center space-x-3 rtl:space-x-reverse">
-      <img src="https://flowbite.com/docs/images/logo.svg" class="h-8" alt="Flowbite Logo" />
-      <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
-  </a>
-  <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-      <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Get started</button>
-      <button data-collapse-toggle="navbar-cta" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-cta" aria-expanded="false">
-        <span class="sr-only">Open main menu</span>
-        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
-        </svg>
-    </button>
+    <a class="cat-card" href="#">
+      <img src="assets/images/664b4ddea6f5470018b3ac8b.png" alt="">
+      <span>Documentaries</span>
+    </a>
+
+    <a class="cat-card" href="#">
+      <img src="assets/images/664b4de7a6f5470018b3ac8c.png" alt="">
+      <span>Kids</span>
+    </a>
+
+    <a class="cat-card" href="#">
+      <img src="assets/images/664b4dd6a6f5470018b3ac8a.png" alt="">
+      <span>Program</span>
+    </a>
+
+    <a class="cat-card" href="#">
+      <img src="assets/images/664b4deca6f5470018b3ac8d.png" alt="">
+      <span>Series</span>
+    </a>
   </div>
-  <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-cta">
-    <ul class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-      <li>
-        <a href="#" class="block py-2 px-3 md:p-0 text-white bg-blue-700 rounded-sm md:bg-transparent md:text-blue-700 md:dark:text-blue-500" aria-current="page">Home</a>
-      </li>
-      <li>
-        <a href="#" class="block py-2 px-3 md:p-0 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">About</a>
-      </li>
-      <li>
-        <a href="#" class="block py-2 px-3 md:p-0 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Services</a>
-      </li>
-      <li>
-        <a href="#" class="block py-2 px-3 md:p-0 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Contact</a>
-      </li>
-    </ul>
-  </div>
-  </div>
-</nav>
+</div>
+  </main>
+<footer class="site-footer">
+  <div class="foot-inner">
 
-</body>
+    <div class="foot-col foot-apps">
+      <a href="#"><img src="assets/images/Google Play.png" alt="Get it on Google Play"></a>
+      <a href="#"><img src="assets/images/Apple Store.png" alt="Download on the App Store"></a>
+    </div>
+
+    <div class="foot-col">
+      <ul class="foot-links">
+        <li><a href="#">Cookie Policy</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Use</a></li>
+        <li><a href="#">Membership Agreement</a></li>
+        <li><a href="#">Manage Privacy Preferences</a></li>
+      </ul>
+    </div>
+
+
+    <div class="foot-col">
+      <ul class="foot-links">
+        <li><a href="#">Contact Us</a></li>
+        <li><a href="#">FAQ</a></li>
+        <li><a href="#">Corporate Information</a></li>
+        <li><a href="#">Application Form for Relevant Person</a></li>
+      </ul>
+    </div>
+
+
+    <div class="foot-col foot-social">
+      <div class="icons">
+        <a href="#" aria-label="Facebook"><img src="assets/images/svg-image-16.png" alt=""></a>
+        <a href="#" aria-label="YouTube"><img src="assets/images/svg-image-17.png" alt=""></a>
+        <a href="#" aria-label="X"><img src="assets/images/svg-image-18.png" alt=""></a>
+        <a href="#" aria-label="Instagram"><img src="assets/images/svg-image-19.png" alt=""></a>
+        <a href="#" aria-label="TikTok"><img src="assets/images/svg-image-20.png" alt=""></a>
+      </div>
+      <small class="copyright">© All content Copyright 2025 Exxen Dijital Yayıncılık A.Ş. All Rights Reserved.</small>
+    </div>
+  </div>
+</footer>
+  </body>
 </html>
