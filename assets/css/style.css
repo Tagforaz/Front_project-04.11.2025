@@ -22,8 +22,8 @@ body {
   padding: 0 60px;
   z-index: 1000;
   background: rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 .main-logo img {
@@ -185,6 +185,7 @@ body {
 .register {
   position: fixed;
   top: 96px;
+  transform: translateY(-1px);
   left: 0;
   width: 100%;
   display: flex;
@@ -319,6 +320,38 @@ body {
   text-align: right;
   display: inline-block;
 }
+
+.live-channels {
+  width: 94%;
+  max-width: none;
+  margin: 28px auto 40px;
+  color: white;
+}
+.ctg-channel {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 22px;
+}
+.live-channels h2 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+.channel-card {
+  position: relative;
+  display: block;
+  height: 200px;
+  border-radius: 14px;
+  overflow: hidden;
+  text-decoration: none;
+}
+.channel-card:hover {
+  height: 250px;
+  border: 3px solid #ffd400;
+  width: 100%;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+}
+
 .categories {
   width: 94%;
   max-width: none;
@@ -374,13 +407,17 @@ body {
 
 .ctg-card span {
   position: absolute;
-  left: 5px;
-  bottom: 22px;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-weight: 800;
   font-size: 32px;
   letter-spacing: 0.2px;
-  color: #fff (0, 0%, 100%);
+  color: #fff;
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.45);
+  z-index: 1;
+  pointer-events: none;
 }
 
 .ctg-card:hover::after {
@@ -532,18 +569,18 @@ body {
   .foot-links a {
     font-size: 15px;
   }
-.foot-col{
-  text-align: center;
-}
-.foot-apps{
-  padding-left: 35%;
-}
-.icons{
-  padding-left: 30%;
-}
-.copyright{
-  padding-left: 17%;
-}
+  .foot-col {
+    text-align: center;
+  }
+  .foot-apps {
+    padding-left: 35%;
+  }
+  .icons {
+    padding-left: 30%;
+  }
+  .copyright {
+    padding-left: 17%;
+  }
   .categories {
     width: 94%;
     margin: 100px auto 30px;
