@@ -1,0 +1,133 @@
+body {
+     margin: 0;
+     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+     background-color: #000;
+     color: #fff;
+     line-height: 1.6;
+ }
+ .yellow-text {
+     color: #ffcc00;
+ }
+
+ .text-fade {
+     color: #aaa;
+ }
+
+ .main-content-title {
+     font-size: 24px;
+     font-weight: 700;
+     margin-bottom: 20px;
+ }
+ .movie-information {
+     display: flex;
+     background-color: #1a1a1a;
+     padding: 40px 5%;
+     align-items: center;
+     gap: 50px;
+     min-height: 500px;
+ }
+
+ .movie-poster-container {
+     flex-shrink: 0;
+     width: 300px;
+     height: 450px;
+     border-radius: 12px;
+     overflow: hidden;
+     box-shadow: 0 25px 40px rgba(0, 0, 0, 0.5);
+     background-color: gray;
+ }
+
+ .movie-poster-container img {
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+     display: block;
+ }
+
+ .movie-content {
+     flex-grow: 1;
+     max-width: 800px;
+ }
+
+ .movie-title {
+     font-size: 56px;
+     font-weight: 900;
+     margin-bottom: 10px;
+ }
+ .movie-infos {
+     font-size: 16px;
+     color: #fff;
+     margin-bottom: 15px;
+     display: flex;
+     align-items: center;
+     gap: 20px;
+ }
+ .rating {
+     display: flex;
+     align-items: center;
+     gap: 5px;
+     font-weight: bold;
+ }
+
+ .rating i {
+     color: #ffcc00;
+     font-size: 14px;
+ }
+
+ .duration {
+     color: #ffcc00;
+ }
+
+ .main-content {
+     padding: 40px 0;
+     width: 88%;
+     margin: 80px auto;
+ }
+
+ .movie-details {
+
+     width: 100%;
+     gap: 60px;
+     margin-bottom: 60px;
+ }
+
+
+ .summary p {
+     font-size: 18px;
+     color: #e0e0e0;
+     margin-bottom: 20px;
+ }
+
+ .slider-container {
+     display: flex;
+     gap: 20px;
+     overflow-x: auto;
+     padding-bottom: 15px;
+     -webkit-overflow-scrolling: touch;
+     scrollbar-width: none;
+ }
+
+ .slider-container::-webkit-scrollbar {
+     display: none;
+ }
+
+ .poster-card {
+     flex-shrink: 0;
+     width: 180px;
+     height: 270px;
+     border-radius: 8px;
+     overflow: hidden;
+     background-color: #333;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     text-align: center;
+     color: #ccc;
+     transition: transform 0.3s ease;
+     text-decoration: none;
+ }
+
+ .poster-card:hover {
+     transform: scale(1.05);
+     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);
+ }

@@ -20,7 +20,6 @@
       defer
       src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"
     ></script>
-    <script defer src="assets/js/main.js"></script>
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body>
@@ -44,72 +43,131 @@
           </li>
         </ul>
       </nav>
+
       <div class="right-side">
-        <div
-          class="lang"
-          id="langToggle"
-          role="button"
-          aria-expanded="false"
-          aria-haspopup="listbox"
-          tabindex="0"
-        >
-          <svg
-            class="lang-globe"
-            width="28"
-            height="28"
-            viewBox="0 0 24 24"
-            aria-hidden="true"
+        <div class="lang-wrap">
+          <div
+            class="lang"
+            id="langToggle"
+            role="button"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            tabindex="0"
           >
-            <path
-              fill="currentColor"
-              d="M12 2a10 10 0 1 0 10 10A10.011 10.011 0 0 0 12 2Zm7.93 9h-3.12a15.6 15.6 0 0 0-1.13-5 8.013 8.013 0 0 1 4.25 5ZM12 4a13.7 13.7 0 0 1 1.72 7H10.28A13.7 13.7 0 0 1 12 4ZM8.25 6a15.6 15.6 0 0 0-1.13 5H4a8.013 8.013 0 0 1 4.25-5ZM4 13h3.12a15.6 15.6 0 0 0 1.13 5A8.013 8.013 0 0 1 4 13Zm8 7a13.7 13.7 0 0 1-1.72-7h3.44A13.7 13.7 0 0 1 12 20Zm3.75-2a15.6 15.6 0 0 0 1.13-5H20a8.013 8.013 0 0 1-4.25 5Z"
-            />
-          </svg>
-          <span class="lang-code">EN</span>
-          <svg
-            class="lang-caret"
-            width="12"
-            height="12"
-            viewBox="0 0 24 24"
-            aria-hidden="true"
+            <svg
+              class="lang-globe"
+              width="28"
+              height="28"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <path
+                fill="currentColor"
+                d="M12 2a10 10 0 1 0 10 10A10.011 10.011 0 0 0 12 2Zm7.93 9h-3.12a15.6 15.6 0 0 0-1.13-5 8.013 8.013 0 0 1 4.25 5ZM12 4a13.7 13.7 0 0 1 1.72 7H10.28A13.7 13.7 0 0 1 12 4ZM8.25 6a15.6 15.6 0 0 0-1.13 5H4a8.013 8.013 0 0 1 4.25-5ZM4 13h3.12a15.6 15.6 0 0 0 1.13 5A8.013 8.013 0 0 1 4 13Zm8 7a13.7 13.7 0 0 1-1.72-7h3.44A13.7 13.7 0 0 1 12 20Zm3.75-2a15.6 15.6 0 0 0 1.13-5H20a8.013 8.013 0 0 1-4.25 5Z"
+              />
+            </svg>
+            <span class="lang-code">EN</span>
+            <svg
+              class="lang-caret"
+              width="12"
+              height="12"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <path fill="currentColor" d="M7 10l5 5 5-5z" />
+            </svg>
+          </div>
+          <div
+            class="lang-dropdown"
+            id="langMenu"
+            role="listbox"
+            aria-labelledby="langToggle"
           >
-            <path fill="currentColor" d="M7 10l5 5 5-5z" />
-          </svg>
+            <button
+              class="lang-option is-active"
+              data-value="EN"
+              role="option"
+              aria-selected="true"
+            >
+              <svg class="flag" viewBox="0 0 3900 3900" aria-hidden="true">
+                <path fill="#b22234" d="M0 0h7410v3900H0z" />
+                <path
+                  d="M0 450h7410m0 600H0m0 600h7410m0 600H0m0 600h7410m0 600H0"
+                  stroke="#fff"
+                  stroke-width="300"
+                />
+                <path fill="#3c3b6e" d="M0 0h2964v2100H0z" />
+              </svg>
+              English (US)
+            </button>
+            <button class="lang-option" data-value="TR" role="option">
+              <svg class="flag" viewBox="0 0 512 512" aria-hidden="true">
+                <path fill="#e30a17" d="M0 0h512v512H0z" />
+                <path
+                  fill="#fff"
+                  d="M225 256a88 88 0 1 1 0-176 88 88 0 0 0 0 176zm120-59-39 13 25 31-32-20-10 40-10-40-32 20 25-31-39-13 39-13-25-31 32 20 10-40 10 40 32-20-25 31z"
+                />
+              </svg>
+              Turkish
+            </button>
+          </div>
         </div>
-        <div
-          class="lang-dropdown"
-          id="langMenu"
-          role="listbox"
-          aria-labelledby="langToggle"
-        >
+        <nav class="hamburger">
           <button
-            class="lang-option is-active"
-            data-value="EN"
-            role="option"
-            aria-selected="true"
+            data-collapse-toggle="navbar-hamburger"
+            type="button"
+            class="inline-flex items-center justify-center p-2 w-10 h-10 text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+            aria-controls="navbar-hamburger"
+            aria-expanded="false"
           >
-            <svg class="flag" viewBox="0 0 3900 3900" aria-hidden="true">
-              <path fill="#b22234" d="M0 0h7410v3900H0z" />
+            <span class="sr-only">Open main menu</span>
+            <svg
+              class="w-5 h-5"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 17 14"
+            >
               <path
-                d="M0 450h7410m0 600H0m0 600h7410m0 600H0m0 600h7410m0 600H0"
-                stroke="#fff"
-                stroke-width="300"
-              />
-              <path fill="#3c3b6e" d="M0 0h2964v2100H0z" />
-            </svg>
-            English (US)
-          </button>
-          <button class="lang-option" data-value="TR" role="option">
-            <svg class="flag" viewBox="0 0 512 512" aria-hidden="true">
-              <path fill="#e30a17" d="M0 0h512v512H0z" />
-              <path
-                fill="#fff"
-                d="M225 256a88 88 0 1 1 0-176 88 88 0 0 0 0 176zm120-59-39 13 25 31-32-20-10 40-10-40-32 20 25-31-39-13 39-13-25-31 32 20 10-40 10 40 32-20-25 31z"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M1 1h15M1 7h15M1 13h15"
               />
             </svg>
-            Turkish
           </button>
-        </div>
+
+          <div
+            class="hidden w-full mobile-panel"
+            id="navbar-hamburger"
+            role="menu"
+            aria-label="Mobile"
+          >
+            <ul class="mobile-list" role="none">
+              <li role="none">
+                <a class="mobile-item is-active" role="menuitem" href="#"
+                  ><i class="fa-solid fa-house"></i>Explore</a
+                >
+              </li>
+              <li role="none">
+                <a class="mobile-item" role="menuitem" href="#"
+                  ><i class="fa-solid fa-tv"></i>Live</a
+                >
+              </li>
+              <li role="none">
+                <a class="mobile-item" role="menuitem" href="#"
+                  ><i class="fa-solid fa-magnifying-glass"></i>Search</a
+                >
+              </li>
+              <li role="none">
+                <a class="mobile-item" role="menuitem" href="#"
+                  ><i class="fa-regular fa-circle-question"></i>Help</a
+                >
+              </li>
+            </ul>
+          </div>
+        </nav>
         <button class="login-btn">Log In</button>
       </div>
       <div class="register">
@@ -119,10 +177,143 @@
       </div>
     </header>
     <main>
+      <div id="default-carousel" class="relative w-full" data-carousel="slide">
+        <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
+          <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <img
+              src="assets/images/ASKK_S1_1920x1080_EN.jpg"
+              class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+              alt="ask-img"
+            />
+          </div>
+          <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <img
+              src="assets/images/GIBI_S6_1920x1080_EN.jpg"
+              class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+              alt="gibi-img"
+            />
+          </div>
+          <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <img
+              src="assets/images/KARMA3_S1_1920x1080_TR.jpg"
+              class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+              alt="karma-img"
+            />
+          </div>
+          <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <img
+              src="assets/images/NEMLI_S3_1920x1080_TR.jpg"
+              class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+              alt="nemli-img"
+            />
+          </div>
+          <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <img
+              src="assets/images/KONSLR_S4_1920x1080_TR.jpg"
+              class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+              alt="kon-img"
+            />
+          </div>
+        </div>
+        <div
+          class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse"
+        >
+          <button
+            type="button"
+            class="w-3 h-3 rounded-full"
+            aria-current="true"
+            aria-label="Slide 1"
+            data-carousel-slide-to="0"
+          ></button>
+          <button
+            type="button"
+            class="w-3 h-3 rounded-full"
+            aria-current="false"
+            aria-label="Slide 2"
+            data-carousel-slide-to="1"
+          ></button>
+          <button
+            type="button"
+            class="w-3 h-3 rounded-full"
+            aria-current="false"
+            aria-label="Slide 3"
+            data-carousel-slide-to="2"
+          ></button>
+          <button
+            type="button"
+            class="w-3 h-3 rounded-full"
+            aria-current="false"
+            aria-label="Slide 4"
+            data-carousel-slide-to="3"
+          ></button>
+          <button
+            type="button"
+            class="w-3 h-3 rounded-full"
+            aria-current="false"
+            aria-label="Slide 5"
+            data-carousel-slide-to="4"
+          ></button>
+        </div>
+        <button
+          type="button"
+          class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+          data-carousel-prev
+        >
+          <span
+            class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none"
+          >
+            <svg
+              class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 6 10"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M5 1 1 5l4 4"
+              />
+            </svg>
+            <span class="sr-only">Previous</span>
+          </span>
+        </button>
+        <button
+          type="button"
+          class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+          data-carousel-next
+        >
+          <span
+            class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none"
+          >
+            <svg
+              class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 6 10"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="m1 9 4-4-4-4"
+              />
+            </svg>
+            <span class="sr-only">Next</span>
+          </span>
+        </button>
+      </div>
+
       <section class="featured">
         <div class="feature-head">
           <h2>Featured</h2>
+        </div>
 
+        <div class="feature-scroller">
           <div class="feature-controls">
             <button class="feature-btn" id="featPrev" aria-label="Previous">
               &#10094;
@@ -131,22 +322,10 @@
               &#10095;
             </button>
           </div>
-        </div>
-        <div class="feature-scroller">
+
           <div class="feature-track" id="movies" aria-live="polite"></div>
         </div>
       </section>
-      <div class="live-channels">
-        <h2>Live Channels</h2>
-        <div class="ctg-channel">
-          <a class="channel-card" href="#"
-            ><img src="assets/images/CHANNEL_TV8.jpg" alt="tv8"
-          /></a>
-          <a class="channel-card" href="#"
-            ><img src="assets/images/CHANNEL_TV8_5.jpg" alt="tv8,5"
-          /></a>
-        </div>
-      </div>
       <div class="categories">
         <h2>Categories</h2>
 
