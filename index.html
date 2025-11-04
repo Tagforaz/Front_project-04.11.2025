@@ -24,158 +24,183 @@
   </head>
   <body>
     <header class="nav-bar">
-      <div class="main-logo">
-        <img
-          src="assets/images/6618e6d729fbc80018bdcbb1.png"
-          alt="Exxen Logo"
-        />
-      </div>
-      <nav class="nav-menu">
-        <ul>
-          <li>
-            <a href="#"><i class="fa-regular fa-house fa-1x"></i>Explore</a>
-          </li>
-          <li>
-            <a href="#"><i class="fa-solid fa-tv"></i>Live</a>
-          </li>
-          <li>
-            <a href="#"><i class="fa-solid fa-magnifying-glass"></i>Search</a>
-          </li>
-        </ul>
-      </nav>
-
-      <div class="right-side">
-        <div class="lang-wrap">
-          <div
-            class="lang"
-            id="langToggle"
-            role="button"
-            aria-expanded="false"
-            aria-haspopup="listbox"
-            tabindex="0"
-          >
-            <svg
-              class="lang-globe"
-              width="28"
-              height="28"
-              viewBox="0 0 24 24"
-              aria-hidden="true"
-            >
-              <path
-                fill="currentColor"
-                d="M12 2a10 10 0 1 0 10 10A10.011 10.011 0 0 0 12 2Zm7.93 9h-3.12a15.6 15.6 0 0 0-1.13-5 8.013 8.013 0 0 1 4.25 5ZM12 4a13.7 13.7 0 0 1 1.72 7H10.28A13.7 13.7 0 0 1 12 4ZM8.25 6a15.6 15.6 0 0 0-1.13 5H4a8.013 8.013 0 0 1 4.25-5ZM4 13h3.12a15.6 15.6 0 0 0 1.13 5A8.013 8.013 0 0 1 4 13Zm8 7a13.7 13.7 0 0 1-1.72-7h3.44A13.7 13.7 0 0 1 12 20Zm3.75-2a15.6 15.6 0 0 0 1.13-5H20a8.013 8.013 0 0 1-4.25 5Z"
-              />
-            </svg>
-            <span class="lang-code">EN</span>
-            <svg
-              class="lang-caret"
-              width="12"
-              height="12"
-              viewBox="0 0 24 24"
-              aria-hidden="true"
-            >
-              <path fill="currentColor" d="M7 10l5 5 5-5z" />
-            </svg>
+      <div class="nav-plate">
+        <div class="nav-top">
+          <div class="main-logo">
+            <img
+              src="assets/images/6618e6d729fbc80018bdcbb1.png"
+              alt="Exxen Logo"
+            />
           </div>
-          <div
-            class="lang-dropdown"
-            id="langMenu"
-            role="listbox"
-            aria-labelledby="langToggle"
-          >
-            <button
-              class="lang-option is-active"
-              data-value="EN"
-              role="option"
-              aria-selected="true"
-            >
-              <svg class="flag" viewBox="0 0 3900 3900" aria-hidden="true">
-                <path fill="#b22234" d="M0 0h7410v3900H0z" />
-                <path
-                  d="M0 450h7410m0 600H0m0 600h7410m0 600H0m0 600h7410m0 600H0"
-                  stroke="#fff"
-                  stroke-width="300"
-                />
-                <path fill="#3c3b6e" d="M0 0h2964v2100H0z" />
-              </svg>
-              English (US)
-            </button>
-            <button class="lang-option" data-value="TR" role="option">
-              <svg class="flag" viewBox="0 0 512 512" aria-hidden="true">
-                <path fill="#e30a17" d="M0 0h512v512H0z" />
-                <path
-                  fill="#fff"
-                  d="M225 256a88 88 0 1 1 0-176 88 88 0 0 0 0 176zm120-59-39 13 25 31-32-20-10 40-10-40-32 20 25-31-39-13 39-13-25-31 32 20 10-40 10 40 32-20-25 31z"
-                />
-              </svg>
-              Turkish
-            </button>
-          </div>
-        </div>
-        <nav class="hamburger">
-          <button
-            data-collapse-toggle="navbar-hamburger"
-            type="button"
-            class="inline-flex items-center justify-center p-2 w-10 h-10 text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-            aria-controls="navbar-hamburger"
-            aria-expanded="false"
-          >
-            <span class="sr-only">Open main menu</span>
-            <svg
-              class="w-5 h-5"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 17 14"
-            >
-              <path
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M1 1h15M1 7h15M1 13h15"
-              />
-            </svg>
-          </button>
-
-          <div
-            class="hidden w-full mobile-panel"
-            id="navbar-hamburger"
-            role="menu"
-            aria-label="Mobile"
-          >
-            <ul class="mobile-list" role="none">
-              <li role="none">
-                <a class="mobile-item is-active" role="menuitem" href="#"
-                  ><i class="fa-solid fa-house"></i>Explore</a
+          <nav class="nav-menu">
+            <ul>
+              <li>
+                <a href="http://127.0.0.1:5500/"
+                  ><i class="fa-regular fa-house fa-1x"></i>Explore</a
                 >
               </li>
-              <li role="none">
-                <a class="mobile-item" role="menuitem" href="#"
-                  ><i class="fa-solid fa-tv"></i>Live</a
-                >
+              <li>
+                <a href="#"><i class="fa-solid fa-tv"></i>Live</a>
               </li>
-              <li role="none">
-                <a class="mobile-item" role="menuitem" href="#"
+              <li>
+                <a id="openSearch" href="#"
                   ><i class="fa-solid fa-magnifying-glass"></i>Search</a
                 >
               </li>
-              <li role="none">
-                <a class="mobile-item" role="menuitem" href="#"
-                  ><i class="fa-regular fa-circle-question"></i>Help</a
-                >
-              </li>
             </ul>
+          </nav>
+          <div class="right-side">
+            <div class="lang-wrap">
+              <div
+                class="lang"
+                id="langToggle"
+                role="button"
+                aria-expanded="false"
+                aria-haspopup="listbox"
+                tabindex="0"
+              >
+                <svg
+                  class="lang-globe"
+                  width="28"
+                  height="28"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M12 2a10 10 0 1 0 10 10A10.011 10.011 0 0 0 12 2Zm7.93 9h-3.12a15.6 15.6 0 0 0-1.13-5 8.013 8.013 0 0 1 4.25 5ZM12 4a13.7 13.7 0 0 1 1.72 7H10.28A13.7 13.7 0 0 1 12 4ZM8.25 6a15.6 15.6 0 0 0-1.13 5H4a8.013 8.013 0 0 1 4.25-5ZM4 13h3.12a15.6 15.6 0 0 0 1.13 5A8.013 8.013 0 0 1 4 13Zm8 7a13.7 13.7 0 0 1-1.72-7h3.44A13.7 13.7 0 0 1 12 20Zm3.75-2a15.6 15.6 0 0 0 1.13-5H20a8.013 8.013 0 0 1-4.25 5Z"
+                  />
+                </svg>
+                <span class="lang-code">EN</span>
+                <svg
+                  class="lang-caret"
+                  width="12"
+                  height="12"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path fill="currentColor" d="M7 10l5 5 5-5z" />
+                </svg>
+              </div>
+              <div
+                class="lang-dropdown"
+                id="langMenu"
+                role="listbox"
+                aria-labelledby="langToggle"
+              >
+                <button
+                  class="lang-option is-active"
+                  data-value="EN"
+                  role="option"
+                  aria-selected="true"
+                >
+                  <svg class="flag" viewBox="0 0 3900 3900" aria-hidden="true">
+                    <path fill="#b22234" d="M0 0h7410v3900H0z" />
+                    <path
+                      d="M0 450h7410m0 600H0m0 600h7410m0 600H0m0 600h7410m0 600H0"
+                      stroke="#fff"
+                      stroke-width="300"
+                    />
+                    <path fill="#3c3b6e" d="M0 0h2964v2100H0z" />
+                  </svg>
+                  English (US)
+                </button>
+                <button class="lang-option" data-value="TR" role="option">
+                  <svg class="flag" viewBox="0 0 512 512" aria-hidden="true">
+                    <path fill="#e30a17" d="M0 0h512v512H0z" />
+                    <path
+                      fill="#fff"
+                      d="M225 256a88 88 0 1 1 0-176 88 88 0 0 0 0 176zm120-59-39 13 25 31-32-20-10 40-10-40-32 20 25-31-39-13 39-13-25-31 32 20 10-40 10 40 32-20-25 31z"
+                    />
+                  </svg>
+                  Turkish
+                </button>
+              </div>
+            </div>
+            <nav class="hamburger">
+              <button
+                data-collapse-toggle="navbar-hamburger"
+                type="button"
+                class="inline-flex items-center justify-center p-2 w-10 h-10 text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                aria-controls="navbar-hamburger"
+                aria-expanded="false"
+              >
+                <span class="sr-only">Open main menu</span>
+                <svg
+                  class="w-5 h-5"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 17 14"
+                >
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M1 1h15M1 7h15M1 13h15"
+                  />
+                </svg>
+              </button>
+              <div
+                class="hidden w-full mobile-panel"
+                id="navbar-hamburger"
+                role="menu"
+                aria-label="Mobile"
+              >
+                <ul class="mobile-list" role="none">
+                  <li role="none">
+                    <a class="mobile-item is-active" role="menuitem" href="#"
+                      ><i class="fa-solid fa-house"></i>Explore</a
+                    >
+                  </li>
+                  <li role="none">
+                    <a class="mobile-item" role="menuitem" href="#"
+                      ><i class="fa-solid fa-tv"></i>Live</a
+                    >
+                  </li>
+                  <li role="none">
+                    <a class="mobile-item" role="menuitem" href="#"
+                      ><i class="fa-solid fa-magnifying-glass"></i>Search</a
+                    >
+                  </li>
+                  <li role="none">
+                    <a class="mobile-item" role="menuitem" href="#"
+                      ><i class="fa-regular fa-circle-question"></i>Help</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </nav>
+            <button class="login-btn">Log In</button>
           </div>
-        </nav>
-        <button class="login-btn">Log In</button>
-      </div>
-      <div class="register">
-        <input class="fullname" type="text" placeholder="Name and Surname" />
-        <input class="email" type="text" placeholder="Email" />
-        <button class="register-btn">Register</button>
+        </div>
+        <div class="register">
+          <div class="field">
+            <input id="regName" class="input" type="text" placeholder=" " />
+            <label for="regName">Name and Surname</label>
+          </div>
+          <div class="field">
+            <input id="regEmail" class="input" type="email" placeholder=" " />
+            <label for="regEmail">Email</label>
+          </div>
+          <button class="register-btn">Register</button>
+        </div>
       </div>
     </header>
+    <section class="search-fold" id="searchFold" hidden>
+      <div class="search-input-wrap">
+        <span class="search-icon" aria-hidden="true"></span>
+        <input
+          id="siteSearch"
+          type="search"
+          placeholder="Search"
+          aria-label="Search for shows"
+          autocomplete="off"
+        />
+      </div>
+      <div id="searchResults" class="search-results" aria-live="polite"></div>
+    </section>
     <main>
       <div id="default-carousel" class="relative w-full" data-carousel="slide">
         <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
@@ -307,12 +332,21 @@
           </span>
         </button>
       </div>
-
+      <div class="live-channels">
+        <h2>Live Channels</h2>
+        <div class="ctg-channel">
+          <a class="channel-card" href="#"
+            ><img src="assets/images/CHANNEL_TV8.jpg" alt="tv8"
+          /></a>
+          <a class="channel-card" href="#"
+            ><img src="assets/images/CHANNEL_TV8_5.jpg" alt="tv8,5"
+          /></a>
+        </div>
+      </div>
       <section class="featured">
         <div class="feature-head">
           <h2>Featured</h2>
         </div>
-
         <div class="feature-scroller">
           <div class="feature-controls">
             <button class="feature-btn" id="featPrev" aria-label="Previous">
@@ -322,13 +356,11 @@
               &#10095;
             </button>
           </div>
-
           <div class="feature-track" id="movies" aria-live="polite"></div>
         </div>
       </section>
       <div class="categories">
         <h2>Categories</h2>
-
         <div class="ctg-grid">
           <a class="ctg-card" href="#">
             <img
@@ -337,7 +369,6 @@
             />
             <span>Competitions</span>
           </a>
-
           <a class="ctg-card" href="#">
             <img
               src="assets/images/664b4ddea6f5470018b3ac8b.png"
@@ -345,7 +376,6 @@
             />
             <span>Documentaries</span>
           </a>
-
           <a class="ctg-card" href="#">
             <img
               src="assets/images/664b4de7a6f5470018b3ac8c.png"
@@ -353,7 +383,6 @@
             />
             <span>Kids</span>
           </a>
-
           <a class="ctg-card" href="#">
             <img
               src="assets/images/664b4dd6a6f5470018b3ac8a.png"
@@ -382,7 +411,6 @@
             ><img src="assets/images/Apple Store.png" alt="app store"
           /></a>
         </div>
-
         <div class="foot-col">
           <ul class="foot-links">
             <li><a href="#">Cookie Policy</a></li>

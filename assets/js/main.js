@@ -66,7 +66,7 @@ function makeCard(movie){
 
   const el = document.createElement("a");
   el.className = "movie-card";
-  el.href = "#";
+  el.href = "details.html?id=" + movie.id;
   el.setAttribute("title", movie.name || "Movie");
 
   el.innerHTML = `
@@ -178,3 +178,85 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+(function(){
+  const openBtn = document.getElementById('openSearch');
+  const fold    = document.getElementById('searchFold');
+  const input   = document.getElementById('siteSearch');
+  const list    = document.getElementById('searchResults');
+
+  if(!openBtn || !fold || !input || !list) return;
+
+  let isOpen = false;
+  let ctrlDown = false;
+  let inflight = 0;
+
+  function toggle(open){
+    isOpen = (open ?? !isOpen);
+    if(isOpen){ fold.removeAttribute('hidden'); setTimeout(()=>input.focus(), 0); }
+    else{ fold.setAttribute('hidden',''); list.innerHTML=''; input.value=''; }
+  }
+  openBtn.addEventListener('click', (e)=>{ e.preventDefault(); toggle(true); });
+  document.addEventListener('keydown', (e)=>{
+    if(e.key === 'Escape' && isOpen) toggle(false);
+  });
+  document.addEventListener('click', (e)=>{
+    if(!isOpen) return;
+    const inside = fold.contains(e.target) || openBtn.contains(e.target);
+    if(!inside) toggle(false);
+  });
+
+
+  function debounce(fn, ms=350){
+    let t; return (...args)=>{ clearTimeout(t); t = setTimeout(()=>fn(...args), ms); };
+  }
+
+  function cleanText(t = "", max = 90){
+    const s = String(t).replace(/<\/?[^>]+(>|$)/g, "");
+    return s.length > max ? s.slice(0, max-1)+'…' : s;
+  }
+
+  function render(items){
+    if(!items?.length){ list.innerHTML = '<p style="opacity:.8;padding:8px 2px">Not founded.</p>'; return; }
+    const frag = document.createDocumentFragment();
+    for(const it of items){
+      const show = it.show || {};
+      const img = show?.image?.medium || show?.image?.original || 'https://via.placeholder.com/300x400?text=No+Image';
+      const year = (show?.premiered||'').slice(0,4);
+      const rate = show?.rating?.average ?? '—';
+      const genres = (show?.genres||[]).slice(0,2).join(', ');
+      const a = document.createElement('a');
+      a.className = 'search-card';
+      a.href = `details.html?id=${show.id}`; 
+      a.target = '';
+      a.rel = '';
+      a.innerHTML = `
+        <img src="${img}" alt="${cleanText(show?.name||'')}" loading="lazy">
+        <div class="search-meta">
+          <div class="search-title">${cleanText(show?.name||'')}</div>
+          <div class="search-sub">
+            ${[year, genres, `⭐ ${rate}`].filter(Boolean).join(' · ')}
+          </div>
+        </div>`;
+      frag.appendChild(a);
+    }
+    list.innerHTML = '';
+    list.appendChild(frag);
+  }
+
+  const doSearch = debounce(async (q)=>{
+    const query = q.trim();
+    if(query.length === 0){ list.innerHTML = ''; return; }
+    const myTicket = ++inflight;
+    try{
+      const res = await fetch(`https://api.tvmaze.com/search/shows?q=${encodeURIComponent(query)}`);
+      const data = await res.json();
+      if(myTicket !== inflight) return; 
+      render(data);
+    }catch{
+      if(myTicket !== inflight) return;
+      list.innerHTML = "<p style='opacity:.8;padding:8px 2px'>Error.</p>";
+    }
+  }, 400);
+
+  input.addEventListener('input', (e)=> doSearch(e.target.value));
+})();

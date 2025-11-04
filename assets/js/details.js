@@ -1,3 +1,49 @@
+
+document.addEventListener('DOMContentLoaded', () => {
+
+  const information = document.querySelector('.movie-information');
+  if (!information) return;
+
+
+  const id = new URLSearchParams(location.search).get('id');
+
+  if (!id) {
+    information.innerHTML = '<p style="opacity:.8">Id not founded <code>details.html?id=1</code></p>';
+    return;
+  }
+
+
+  fetch(`https://api.tvmaze.com/shows/${id}`)
+    .then(r => {
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      return r.json();
+    })
+    .then(movie => {
+      const img = movie?.image?.original || movie?.image?.medium || '';
+      const genres = Array.isArray(movie?.genres) ? movie.genres.join(' • ') : '';
+      const summary = movie?.summary || '';
+
+      information.innerHTML = `
+        <div class="movie-poster-container">
+          <img src="${img}" alt="${movie?.name || ''}">
+        </div>
+        <div class="movie-content">
+          <h1 class="movie-title">${movie?.name || ''}</h1>
+          <div class="movie-infos">
+            <span>${movie?.language || ''}</span>
+            <span class="duration">${movie?.averageRuntime ?? movie?.runtime ?? ''} min</span>
+            <span>${genres}</span>
+            <div class="rating"><i class="fa-solid fa-star"></i><span>${movie?.rating?.average ?? '—'}</span></div>
+          </div>
+          <div class="summary">${summary}</div>
+        </div>
+      `;
+    })
+    .catch(err => {
+      console.error('Fetch error:', err);
+      information.innerHTML = '<p style="opacity:.8">Məlumat yüklənmədi.</p>';
+    });
+});
 (function () {
   const toggle = document.getElementById('langToggle');
   const menu = document.getElementById('langMenu');
@@ -85,6 +131,7 @@ function makeCard(movie){
   return el;
 }
 
+
 function updateArrows(){
   const max = getMax();
 
@@ -147,41 +194,3 @@ fetch("https://api.tvmaze.com/shows")
     track.innerHTML = "<p style='opacity:.8'>Data not uploaded.</p>";
     updateArrows();
   });
-const moviePoster = document.querySelector(".movie-information");
-const movieSummary = document.querySelector(".movie-details");
-const youMayLike   = document.querySelector(".slider-container");
-
-const showId = new URLSearchParams(location.search).get("id");
-
-fetch(`https://api.tvmaze.com/shows/${showId}`)
-  .then(r => r.json())
-  .then(movie => {
-    moviePoster.innerHTML = `
-      <div class="movie-poster-container">
-        <img src="${movie?.image?.original || movie?.image?.medium || ""}" alt="${movie?.name || ""}">
-      </div>
-      <div class="movie-content">
-        <h1 class="movie-title">${movie?.name || ""}</h1>
-        <div class="movie-infos">
-          <span>${movie?.language || ""}</span>
-          <span class="duration">${movie?.averageRuntime ?? movie?.runtime ?? ""} min</span>
-          <span>${Array.isArray(movie?.genres) ? movie.genres.join(" • ") : ""}</span>
-          <div class="rating">
-            <i class="fa-solid fa-star"></i>
-            <span>${movie?.rating?.average ?? "—"}</span>
-          </div>
-        </div>
-      </div>
-    `;
-
-    movieSummary.innerHTML = `
-      <div class="summary">
-        <h2 class="main-content-title">${movie?.name || ""} Summary</h2>
-        <p>${(movie?.summary || "")}</p>
-      </div>
-    `;
-  })
-  .catch(() => {
-    moviePoster.innerHTML = `<p style="opacity:.8">Data not uploaded.</p>`;
-  });
-  
